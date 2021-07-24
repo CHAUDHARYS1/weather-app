@@ -1,11 +1,89 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-    
+    <header>
+        <div class="intro container left-align ">
+            <div>
+                <h1>Weather <br> <strong>Dashboard</strong></h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container container row">
+        <div class="col s12">
+            <div class="card hoverable teal white-text">
+                <div class="card-content">
+                    <h5 class="mb-3 mt-3">About Weather Dashboard ---- </h5>
+                    <p>Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search. Users
+                        can search the desired city and 5-day forecast will be displayed. Great application to use to
+                        plan trips.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Form -->
+        <aside class="col s4">
+            <div class="card hoverable">
+                <div class="card-content">
+                    <p class="card-title">Search by City:</p>
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
+                        because I require little markup to use effectively.</p>
+                    <form action="">
+                        <div class="input-field">
+                            <textarea id="search" class="materialize-textarea"></textarea>
+                            <label for="search">Search</label>
+                        </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Displayed Info -->
+        <main class="col s8">
+            <div class="card">
+                <div class="card-content">
+                    <h2>City Name</h2>
+                    <br>
+                    <ul>
+                        <li>Temp:</li>
+                        <li>Wind:</li>
+                        <li>Humidity:</li>
+                        <li>UV Index:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h2>5-Day Forecast</h2>
+                    <br>
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
+
 </html>

@@ -10,6 +10,12 @@ var cityContainerEl = document.querySelector("#main-city-container");
 // select span where search word will be dispalyed
 var citySearchTermEl = document.querySelector("#city-search-term");
 
+// 
+var cityNameHeading = document.querySelector("#city-name-heading")
+
+var apiKey = "33d588881cf1e072943e6745ea106abc";
+var tempUnit = "imperial";
+
 // from handler function
 var formSubmitHandler = function (event) {
     // prevent the form from reloading the page
@@ -33,7 +39,8 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 var getCity = function () {
     var cityName = "chicago";
     // api source
-    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=33d588881cf1e072943e6745ea106abc";
+    //https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${tempUnit}
+    var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=chicago&appid=33d588881cf1e072943e6745ea106abc&units=$tempUnit`;
 
     // fetch api
     fetch(apiUrl).then((response) => {
@@ -56,8 +63,7 @@ getCity();
 
 // function: display searched city 
 var displayWeather = function(data){
-    cityContainerEl.textContent = "";
-    var city = data.name;
-
-    cityContainerEl.appendChild(city);
+    cityNameHeading.textContent = data.name;
+    // var city = data.name;
+    // cityNameHeading.appendChild(city);
 }

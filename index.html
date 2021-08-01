@@ -16,38 +16,25 @@
     <header>
         <div class="intro container left-align">
             <div>
-                <h1>Weather <br> <strong>Dashboard</strong></h1>
+                <h2>Weather <br> <strong>Dashboard</strong></h2>
+              
             </div>
         </div>
+       
     </header>
 
     <div class="main-container container row">
-        <div class="col s12">
-            <div class="card hoverable teal white-text">
-                <div class="card-content">
-                    <h5 class="mb-3 mt-3">About Weather Dashboard ---- </h5>
-                    <p>Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search. Users
-                        can search the desired city and 5-day forecast will be displayed. Great application to use to
-                        plan trips.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="">
-            <h2>Search result for <span id="city-search-term"></span></h2>
-        </div>
-
         <!-- Search Form -->
         <aside class="col s4">
             <div class="card hoverable">
                 <div class="card-content">
                     <p class="card-title">Search by City:</p>
-                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient
-                        because I require little markup to use effectively.</p>
+                    <p>Search weather information.</p>
                     <form id="user-form">
+
                         <div class="input-field">
-                            <input id="search" class="materialize-textarea" />
-                            <label for="search">Search</label>
+                            <input id="search" class="materialize-textarea" type="text" />
+                            <label for="search">Search City Name</label>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit">Submit
                             <i class="material-icons right">send</i>
@@ -55,38 +42,52 @@
                     </form>
                 </div>
             </div>
+            <div class="card hoverable teal white-text" id="about-weather-dashboard">
+                <div class="card-content">
+                    <span id="exit-card"><i class="material-icons close-icon">close</i></span>
+                    <h5 class="mb-3 mt-3">About Weather Dashboard ---- </h5>
+                    <p>Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search. Users
+                        can search the desired city and 5-day forecast will be displayed. Great application to use to
+                        plan trips.</p>
+                </div>
+            </div>
         </aside>
 
         <!-- Displayed Info -->
         <main class="col s8">
-            <div class="card">
+            <!-- <div class="search-results">
+                <h2>Search result for <span id="city-search-term"></span></h2>
+            </div> -->
+            <div class="card hoverable">
                 <div class="card-content" id="main-city-container">
+                    <div id="icon"></div>
+                    <p id="temp"></p>
+
                     <h2 id="city-name-heading">City Name</h2>
-                    <br>
+                    <p id="description"></p>
+
                     <ul>
-                        <li>Temp:</li>
-                        <li>Wind:</li>
-                        <li>Humidity:</li>
-                        <li>UV Index:</li>
+                        <li id="wind"></li>
+                        <li id="humidity"></li>
+                        <li id="gust"></li>
                     </ul>
                 </div>
             </div>
-            <div class="card">
-                <div class="card-content">
+
+
+            <!-- 5DAY FORECAST -->
+            <div class="forecast card hoverable">
+                <div class="five-day-forecast">
                     <h2>5-Day Forecast</h2>
-                    <br>
-                    <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
+                </div>
+                <div class="row card-content" id="five-day-forecast">
+                    
                 </div>
             </div>
         </main>
     </div>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/five-day.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 

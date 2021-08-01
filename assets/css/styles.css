@@ -22,14 +22,16 @@ h1 {
 h2 {
     font-size: 24px;
 }
-
+p, ul{
+    font-size: 12px;
+}
 header {
     padding: 20px;
     border-bottom: 1px solid rgb(223, 223, 223);
 }
 
 .main-container {
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 .border-bottom {
@@ -54,4 +56,20 @@ header {
 
 .mt-3 {
     margin-top: 20px;
+}
+.five-day-forecast{
+    padding-left: 20px;
+    padding-top: 20px;
+}
+.forecast .row div{
+    padding: 5px;
+}
+.close-icon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin:20px 20px 0px 0px;
+}
+#temp{
+    font-size: 22px;
 }

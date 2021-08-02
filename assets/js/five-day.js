@@ -24,7 +24,7 @@ function getWeatherData () {
 }
 getWeatherData()
 
-var displayForecastWeather = function(){
-
+var displayForecastWeather = function(data){
+    currentLocation.textContent = data.list[0].dt;
 
 }

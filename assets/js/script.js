@@ -35,20 +35,20 @@ var formSubmitHandler = function (event) {
 
   // get value from search input
   var search = searchEl.value.trim();
+  console.log(search);
   // form error handler
-  if (search) {
-    getCity();
-    searchEl.value = "";
-  } else {
-    alert("Add the correct city");
+  if (search === "" || search === null) {
+    alert("Please enter a city name")
+  } else{
+    getCity(cityName);
   }
 }
 // action: form is submitted
 userFormEl.addEventListener("submit", formSubmitHandler);
 
 // funtion to fetch weather data
-var getCity = function () {
-  var cityName = "Honolulu";
+var getCity = function (cityName) {
+  var cityName = "Chicago";
   // api source: https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${tempUnit}
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=33d588881cf1e072943e6745ea106abc&units=" + tempUnit;
 
@@ -62,7 +62,7 @@ var getCity = function () {
     })
     .then(function (data) {
       console.log(data);
-      displayWeather(data);
+      return displayWeather(data);
     })
     .catch((error) => {
       console.error("FETCH ERROR:", error);
@@ -97,34 +97,5 @@ var displayWeather = function (data) {
   var gust = document.querySelector("#gust");
   gust.textContent = "Gust: " + data.wind.gust + " mphs";
 
-  // for (var i = 0; i < data.length; i++) {
 
-  //   var fiveFayForecast = document.querySelector("#five-day-forecast");
-
-  //   var cardEl = document.createElement("div")
-  //   cardEl.classList = "col s3 card";
-
-  //   var cardContentEl = document.createElement("div");
-  //   cardContentEl.classList = "card-content";
-  //   cardEl.appendChild(cardContentEl);
-
-  //   var unorderedListEl = document.createElement("ul");
-  //   cardContentEl.appendChild(unorderedListEl);
-
-  //   var weatherDescriptionEl = document.createElement("li");
-  //   weatherDescriptionEl.textContent = "Description"
-
-  //   var weatherTempretureEl = document.createElement("li");
-  //   weatherTempretureEl.textContent = "Tempreture";
-
-  //   var weatherWindEl = document.createElement("li");
-  //   weatherWindEl.textContent = "Wind";
-
-  //   var weatherHumidityEl = document.createElement("li");
-  //   weatherHumidityEl.textContent = "Humidity";
-
-  //   unorderedListEl.appendChild(weatherDescriptionEl, weatherTempretureEl, weatherWindEl, weatherHumidityEl);
-  //   fiveFayForecast.appendChild(cardEl);
-
-  // }
 }

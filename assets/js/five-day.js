@@ -27,6 +27,9 @@ getWeatherData()
 var displayForecastWeather = function (data) {
 
     for (var i = 0; i < 5; i++) {
+        var columnsDivEl = document.createElement("div");
+        columnsDivEl.classList = "card-content col";
+
         // Date
         var forecastedDate = new Date(data.list[i].dt * 1000);
         var dateEl = document.createElement("p");
@@ -41,7 +44,7 @@ var displayForecastWeather = function (data) {
        
         // Weather Tempreture
         var weatherTempEl = document.createElement("p");
-        weatherTempEl.textContent = data.list[i].main.temp;
+        weatherTempEl.textContent = data.list[i].main.temp + " °F";
 
         // Weather Description
         var weatherDescriptionEl = document.createElement("p");
@@ -59,8 +62,8 @@ var displayForecastWeather = function (data) {
         var weatherGustEl = document.createElement("p");
         weatherGustEl.textContent = "Gust: " + data.list[i].wind.gust + " mphs";
 
-        currentStats.append(dateEl, weatherIconEl, weatherTempEl, weatherDescriptionEl, weatherWindEl, weatherHumidityEl, weatherGustEl);
-
+        columnsDivEl.append(dateEl, weatherIconEl, weatherTempEl, weatherDescriptionEl, weatherWindEl, weatherHumidityEl, weatherGustEl);
+        currentStats.appendChild(columnsDivEl);
 
 
         // currentLocation.textContent = data.list[0].dt_txt;

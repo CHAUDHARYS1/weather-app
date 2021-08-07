@@ -26,7 +26,7 @@
 
     <div class="main-container container row">
         <!-- Search Form -->
-        <aside class="col s4">
+        <aside class="col s3">
             <div class="card hoverable">
                 <div class="card-content">
                     <p class="card-title">Search by City:</p>
@@ -34,7 +34,7 @@
                     <form id="user-form">
                         <div class="input-field">
                             <input id="search" class="materialize-textarea" type="text" />
-                            <label for="search">Search City Name</label>
+                            <label for="search">Search City</label>
                         </div>
                         <button class="btn waves-effect waves-light" type="submit">Submit
                             <i class="material-icons right">send</i>
@@ -54,12 +54,16 @@
         </aside>
 
         <!-- Displayed Info -->
-        <main class="col s8">
+        <main class="col s9">
             <!-- <div class="search-results">
                 <h2>Search result for <span id="city-search-term"></span></h2>
             </div> -->
             <div class="card hoverable">
                 <div class="card-content" id="main-city-container">
+                    <div class="card-title">
+                        <h5>Current Forecast</h5>
+                    </div>
+
                     <div id="icon"></div>
                     <p id="temp"></p>
 
@@ -73,18 +77,22 @@
                     </ul>
                 </div>
             </div>
-
-
-            <!-- 5DAY FORECAST -->
-            <div class="card hoverable component-weather-box">
-                <div class="component-weather-content">
-                    <div class="weather-content-overview"></div>
-                    <div class="weather-content-stats"></div>
+            <div class="component-weather-box">
+                <div class="card hoverable">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <h5>5 Day Forecast</h5>
+                        </div>
+                        <div class="row">
+                            <div class="weather-content-stats"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="component-forecast-container"></div>
             </div>
         </main>
     </div>
+    <!-- 5DAY FORECAST -->
+
     <script src="assets/js/script.js"></script>
     <script src="assets/js/five-day.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

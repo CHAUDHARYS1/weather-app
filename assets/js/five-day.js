@@ -1,10 +1,8 @@
-var currentLocation = document.getElementsByClassName("weather-content-overview")[0];
 var currentStats = document.getElementsByClassName("weather-content-stats")[0];
-var forecast = document.getElementsByClassName("component-forecast-container")[0];
 
-var apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=Chicago&appid=33d588881cf1e072943e6745ea106abc";
+function getWeatherData(cityName) {
 
-function getWeatherData() {
+    var apiForecastUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=33d588881cf1e072943e6745ea106abc";
 
     // fetch api
     fetch(apiForecastUrl).then((response) => {
@@ -22,9 +20,10 @@ function getWeatherData() {
             console.error("FETCH ERROR:", error);
         });
 }
-getWeatherData()
 
 var displayForecastWeather = function (data) {
+
+    currentStats.innerHTML = "";
 
     for (var i = 0; i < 5; i++) {
         var columnsDivEl = document.createElement("div");
@@ -44,7 +43,9 @@ var displayForecastWeather = function (data) {
        
         // Weather Tempreture
         var weatherTempEl = document.createElement("p");
-        weatherTempEl.textContent = data.list[i].main.temp + " °F";
+        var tempData =  data.list[i].main.temp;
+        tempData = Math.round(((tempData - 273.15) * 9/5 + 32));
+        weatherTempEl.textContent = tempData + " °F";
 
         // Weather Description
         var weatherDescriptionEl = document.createElement("p");
@@ -72,3 +73,5 @@ var displayForecastWeather = function (data) {
     console.log(currentStats);
 
 }
+
+// fiveDayFormEl.addEventListener("submit", searchCity);

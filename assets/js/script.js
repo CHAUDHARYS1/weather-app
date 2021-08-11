@@ -38,9 +38,11 @@ var formSubmitHandler = function (event) {
   console.log(search);
   // form error handler
   if (search === "" || search === null) {
-    alert("Please enter a city name")
+    alert("Please enter a city name");
   } else{
-    getCity(cityName);
+    getCity(search);
+    getWeatherData(search);
+    saveCity(search);
   }
 }
 // action: form is submitted
@@ -48,7 +50,6 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 
 // funtion to fetch weather data
 var getCity = function (cityName) {
-  var cityName = "Chicago";
   // api source: https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=${tempUnit}
   var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=33d588881cf1e072943e6745ea106abc&units=" + tempUnit;
 
@@ -69,8 +70,6 @@ var getCity = function (cityName) {
     });
 };
 
-getCity();
-
 // function: display searched city 
 var displayWeather = function (data) {
   cityNameHeading.textContent = data.name + ", " + data.sys.country;
@@ -83,6 +82,7 @@ var displayWeather = function (data) {
   var weatherIconEl = document.createElement("img");
   //10d@2x
   weatherIconEl.setAttribute("src","http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png");
+  weatherIcon.innerHTML = "";
   weatherIcon.appendChild(weatherIconEl);
 
   var temp = document.querySelector("#temp");
@@ -96,6 +96,10 @@ var displayWeather = function (data) {
 
   var gust = document.querySelector("#gust");
   gust.textContent = "Gust: " + data.wind.gust + " mphs";
+}
 
-
+var saveCity = function(city){
+  var storeCities = JSON.parse(localStorage.getItem("City")) || [];
+  storeCities.push(city);
+  localStorage.setItem("City", JSON.stringify(storeCities));
 }

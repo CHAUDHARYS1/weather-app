@@ -13,6 +13,11 @@ var citySearchTermEl = document.querySelector("#city-search-term");
 // 
 var cityNameHeading = document.querySelector("#city-name-heading")
 
+// delete local storage btn
+var deleteRecentSearchesBtn = document.querySelector("#delete-recent-searches");
+var recentSearchContainer = document.querySelector("#recent-search");
+
+
 var apiKey = "33d588881cf1e072943e6745ea106abc";
 var tempUnit = "imperial";
 
@@ -39,10 +44,16 @@ var formSubmitHandler = function (event) {
   // form error handler
   if (search === "" || search === null) {
     alert("Please enter a city name");
-  } else{
+  } 
+  // else if (search !== displayWeather(data)){
+  //     alert("please enter a correct city");
+  // }
+  else {
     getCity(search);
     getWeatherData(search);
     saveCity(search);
+    getRecentSearches();
+    searchEl.value = '';
   }
 }
 // action: form is submitted
@@ -72,9 +83,11 @@ var getCity = function (cityName) {
 
 // function: display searched city 
 var displayWeather = function (data) {
+  var mainEl = document.querySelector("main");
+  mainEl.style.display = "block";
+
   cityNameHeading.textContent = data.name + ", " + data.sys.country;
-  // var city = data.name;
-  // cityNameHeading.appendChild(city);
+ 
   var description = document.querySelector("#description");
   description.textContent = data.weather[0].description.toUpperCase();
 
@@ -97,9 +110,29 @@ var displayWeather = function (data) {
   var gust = document.querySelector("#gust");
   gust.textContent = "Gust: " + data.wind.gust + " mphs";
 }
-
+var getRecentSearches = function(){
+  var recentSearches = JSON.parse(localStorage.getItem("City")) || [];
+  
+  for (var i = 0; i < recentSearches.length; i++) {
+    var recentSearchBtn = document.createElement("button");
+    recentSearchBtn.classList = "chip border-none"
+    recentSearchBtn.innerHTML = recentSearches[i];
+    recentSearchContainer.appendChild(recentSearchBtn);
+  }
+   
+}
 var saveCity = function(city){
   var storeCities = JSON.parse(localStorage.getItem("City")) || [];
   storeCities.push(city);
   localStorage.setItem("City", JSON.stringify(storeCities));
 }
+
+var deleteRecentSearches = function(){
+  localStorage.removeItem("City");
+  
+  while (recentSearchContainer.firstChild) {
+    recentSearchContainer.removeChild(recentSearchContainer.firstChild);
+}
+}
+
+deleteRecentSearchesBtn.addEventListener("click", deleteRecentSearches);

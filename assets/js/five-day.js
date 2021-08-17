@@ -49,7 +49,7 @@ var displayForecastWeather = function (data) {
 
         // Weather Description
         var weatherDescriptionEl = document.createElement("p");
-        weatherDescriptionEl.textContent = data.list[i].weather[0].description;
+        weatherDescriptionEl.textContent = data.list[i].weather[0].description.toUpperCase();
 
         // Wind
         var weatherWindEl = document.createElement("p");

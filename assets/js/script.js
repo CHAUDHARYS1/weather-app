@@ -17,7 +17,6 @@ var cityNameHeading = document.querySelector("#city-name-heading")
 var deleteRecentSearchesBtn = document.querySelector("#delete-recent-searches");
 var recentSearchContainer = document.querySelector("#recent-search");
 
-
 var apiKey = "33d588881cf1e072943e6745ea106abc";
 var tempUnit = "imperial";
 
@@ -112,10 +111,10 @@ var displayWeather = function (data) {
 }
 var getRecentSearches = function(){
   var recentSearches = JSON.parse(localStorage.getItem("City")) || [];
-  
+  recentSearchContainer.innerHTML = "";
   for (var i = 0; i < recentSearches.length; i++) {
     var recentSearchBtn = document.createElement("button");
-    recentSearchBtn.classList = "chip border-none"
+    recentSearchBtn.classList = "chip border-none";
     recentSearchBtn.innerHTML = recentSearches[i];
     recentSearchContainer.appendChild(recentSearchBtn);
   }
@@ -136,3 +135,4 @@ var deleteRecentSearches = function(){
 }
 
 deleteRecentSearchesBtn.addEventListener("click", deleteRecentSearches);
+getRecentSearches();

@@ -16,20 +16,41 @@
     <!-- Header Here -->
     <header>
         <div class="intro container left-align">
-            <div>
-                <h2>Weather <br> <strong>Dashboard</strong></h2>
+            <div class="row">
+                <div class="col s12 m5 l4 xl3">
+                    <h2>Weather <br> <strong>Dashboard</strong></h2>
+                </div>
+                <div class="col s12 m7 l8 xl9" id="about-weather-dashboard">
+                    <div class="card">
+                        <div class="card-content">
+                            <span id="exit-card"><i class="material-icons close-icon">close</i></span>
+                            <div class="mb-3 mt-3">
+                                <h6>About Weather Dashboard ----</h6>
+                            </div>
+                            <p>Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search.
+                                Users
+                                can search the desired city and 5-day forecast will be displayed. Great application to
+                                use to
+                                plan trips.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
+    <div class="container">
 
+    </div>
 
     <div class="main-container container row">
         <!-- Search Form -->
-        <aside class="col s12 m5 l4 xl-3">
+        <aside class="col s12 m5 l4 xl3">
             <div class="card hoverable">
                 <div class="card-content">
-                    <div class="card-title"><h6><b>Search by City:</b></h6></div>
+                    <div class="card-title">
+                        <h6><b>Search by City:</b></h6>
+                    </div>
                     <p><b>Search weather information by city or state.</b></p>
                     <p><i>Ex. San Diego</i></p>
                     <form id="user-form">
@@ -45,42 +66,40 @@
             </div>
             <div class="card hoverable">
                 <div class="card-content">
-                    <div class="card-title"><h6>Recent searches</h6></div>
+                    <div class="card-title">
+                        <h6>Recent searches</h6>
+                    </div>
                     <div id="recent-search">
                     </div>
-                     <button id="delete-recent-searches" class="waves-effect waves-light btn">Delete all<i class="material-icons right">delete_forever</i></button>
+                    <button id="delete-recent-searches" class="waves-effect waves-light btn">Delete all<i
+                            class="material-icons right">delete_forever</i></button>
                 </div>
             </div>
-            
-            <div class="card hoverable teal white-text" id="about-weather-dashboard">
-                <div class="card-content">
-                    <span id="exit-card"><i class="material-icons close-icon">close</i></span>
-                    <div class="mb-3 mt-3"><h6>About Weather Dashboard ----</h6></div>
-                    <p>Weather Application that shows users Temp, Wind, Humidity, UV Index based on user search. Users
-                        can search the desired city and 5-day forecast will be displayed. Great application to use to
-                        plan trips.</p>
-                </div>
-            </div>
+
+
         </aside>
 
         <!-- Displayed Info -->
-        <main class="col s9">
+        <main class="col s12 m7 l8 xl9">
             <div class="card hoverable">
-                <div class="card-content" id="main-city-container">
-                    <div class="card-title">Current Forecast</div>
+                <div class="card-content row" id="main-city-container">
+                    <div class="card-title">Today's Forecast</div>
 
-                    <div id="icon"></div>
-                    <p id="temp"></p>
-
-                    <h2 id="city-name-heading"></h2>
-                    <p id="description"></p>
-
-                    <ul>
-                        <li id="wind"></li>
-                        <li id="humidity"></li>
-                        <li id="gust"></li>
-                    </ul>
+                    <div class="col">
+                        <div id="icon"></div>
+                        <p id="description"></p>
+                        <p id="temp"></p>
+                        <h2 id="city-name-heading"></h2>
+                    </div>
+                    <div class="col">
+                        <ul>
+                            <li id="wind"></li>
+                            <li id="humidity"></li>
+                            <li id="gust"></li>
+                        </ul>
+                    </div>
                 </div>
+
             </div>
             <div class="component-weather-box">
                 <div class="card hoverable">
@@ -89,7 +108,7 @@
                             <h5>5 Day Forecast</h5>
                         </div>
                         <div class="row">
-                            <div class="weather-content-stats"></div>
+                            <div class="weather-content-stats col"></div>
                         </div>
                     </div>
                 </div>
@@ -100,23 +119,23 @@
     <!-- Footer -->
     <footer class="page-footer teal">
         <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Weather Dashboard</h5>
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Weather Dashboard</h5>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col l4 offset-l2 s12">
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="#!">GitHub</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div class="footer-copyright">
-          <div class="container">
-          Made with love by Shital
-          </div>
+            <div class="container">
+                Made with love by Shital
+            </div>
         </div>
-      </footer>
+    </footer>
     <script src="assets/js/script.js"></script>
     <script src="assets/js/five-day.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

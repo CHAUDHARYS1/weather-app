@@ -89,6 +89,7 @@ var displayWeather = function (data) {
  
   var description = document.querySelector("#description");
   description.textContent = data.weather[0].description.toUpperCase();
+  description.classList = "description";
 
   var weatherIcon = document.querySelector("#icon");
   var weatherIconEl = document.createElement("img");
@@ -99,6 +100,7 @@ var displayWeather = function (data) {
 
   var temp = document.querySelector("#temp");
   temp.textContent = data.main.feels_like + " °F";
+  temp.classList = "heading-h1";
 
   var wind = document.querySelector("#wind");
   wind.textContent = "Wind: " + data.wind.speed + " mphs";

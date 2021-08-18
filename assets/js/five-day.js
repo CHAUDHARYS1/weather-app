@@ -46,10 +46,12 @@ var displayForecastWeather = function (data) {
         var tempData =  data.list[i].main.temp;
         tempData = Math.round(((tempData - 273.15) * 9/5 + 32));
         weatherTempEl.textContent = tempData + " °F";
+        weatherTempEl.classList = "card-title bold";
 
         // Weather Description
         var weatherDescriptionEl = document.createElement("p");
         weatherDescriptionEl.textContent = data.list[i].weather[0].description.toUpperCase();
+        weatherDescriptionEl.classList = "description";
 
         // Wind
         var weatherWindEl = document.createElement("p");

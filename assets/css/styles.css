@@ -3,6 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background:
+    linear-gradient(135deg, #FFFFFF 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #FFFFFF 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #FFFFFF 25%, transparent 25%),
+    linear-gradient(45deg, #FFFFFF 25%, transparent 25%);
+  background-size: 100px 100px;
+  background-color: #fafafa;
+}
 
 h1,
 h2,
@@ -62,6 +71,12 @@ main{
 .mt-3 {
     margin-top: 20px;
 }
+.bold{
+    font-weight: bolder;
+}
+.heading-h1{
+    font-size: 52px!important;
+}
 .five-day-forecast{
     padding-left: 20px;
     padding-top: 20px;
@@ -78,3 +93,9 @@ main{
 #temp{
     font-size: 22px;
 }
+.description{
+    letter-spacing: 2px;
+}
+/* aside .card{
+    background: transparent!important;
+} */

@@ -111,6 +111,8 @@ var displayWeather = function (data) {
   var gust = document.querySelector("#gust");
   gust.textContent = "Gust: " + data.wind.gust + " mphs";
 }
+
+
 var getRecentSearches = function(){
   var recentSearches = JSON.parse(localStorage.getItem("City")) || [];
   recentSearchContainer.innerHTML = "";
@@ -120,8 +122,9 @@ var getRecentSearches = function(){
     recentSearchBtn.innerHTML = recentSearches[i];
     recentSearchContainer.appendChild(recentSearchBtn);
   }
-   
 }
+
+
 var saveCity = function(city){
   var storeCities = JSON.parse(localStorage.getItem("City")) || [];
   storeCities.push(city);
@@ -136,5 +139,13 @@ var deleteRecentSearches = function(){
 }
 }
 
+var recentSearchHandler = function(data) {
+  var btnText = data.target.textContent;
+  getCity(btnText);
+  getWeatherData(btnText);
+  // console.log(data.target.textContent);
+}
+
+recentSearchContainer.addEventListener("click",recentSearchHandler);
 deleteRecentSearchesBtn.addEventListener("click", deleteRecentSearches);
 getRecentSearches();

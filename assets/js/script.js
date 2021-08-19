@@ -17,6 +17,7 @@ var cityNameHeading = document.querySelector("#city-name-heading")
 var deleteRecentSearchesBtn = document.querySelector("#delete-recent-searches");
 var recentSearchContainer = document.querySelector("#recent-search");
 
+
 var apiKey = "33d588881cf1e072943e6745ea106abc";
 var tempUnit = "imperial";
 

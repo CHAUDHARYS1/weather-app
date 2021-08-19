@@ -99,3 +99,8 @@ main{
 /* aside .card{
     background: transparent!important;
 } */
+#recent-search .chip:hover{
+    background: teal;
+    color: white;
+    cursor: pointer;
+}

@@ -28,8 +28,8 @@ SO THAT I can plan a trip accordingly
 > WHEN I click on a city in the search history THEN I am again presented with current and future conditions for that city
 ```
 ## Mock-up
-
-![06-server-side-apis-homework-demo](https://user-images.githubusercontent.com/39867916/126876358-2bb41384-35ad-4086-b8d5-3ad292e3f258.jpg)
+Demo example of what the application will look like --
+<img width="1792" alt="Screen Shot 2021-08-25 at 1 50 13 PM" src="https://user-images.githubusercontent.com/39867916/130848264-0c8ec259-c914-4561-888a-8cc51acb98bb.png">
 
 ## Built with
 - HTML

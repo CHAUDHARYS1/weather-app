@@ -21,17 +21,6 @@ var recentSearchContainer = document.querySelector("#recent-search");
 var apiKey = "33d588881cf1e072943e6745ea106abc";
 var tempUnit = "imperial";
 
-// close about me component
-var exitWeatherCard = document.querySelector("#exit-card");
-exitWeatherCard.style.cursor = "pointer";
-
-var closeAbout = function () {
-  var aboutWeatherDashboard = document.querySelector("#about-weather-dashboard");
-  if (exitWeatherCard) {
-    aboutWeatherDashboard.remove();
-  }
-}
-exitWeatherCard.addEventListener("click", closeAbout);
 
 // from handler function
 var formSubmitHandler = function (event) {
